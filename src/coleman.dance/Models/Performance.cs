@@ -12,7 +12,7 @@ namespace Coleman.Dance.Models
     {
         [ScaffoldColumn(false)]
         [BsonId]
-        public ObjectId PerformanceId { get; set; }
+        public ObjectId Id { get; set; }
 
         [Required]
         public string Title { get; set; }

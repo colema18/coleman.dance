@@ -2,14 +2,14 @@
     'use strict';
 
     angular
-        .module('performancesApp')
+        .module('app')
         .controller('PerformancesListController', PerformancesListController);
 
-    /* Movies List Controller  */
+    /* Performance List Controller  */
     PerformancesListController.$inject = ['$scope', 'Performance'];
 
     function PerformancesListController($scope, Performance) {
-        $scope.Performances = Performance.query();
+        $scope.performances = Performance.query();
     }
 
 })();

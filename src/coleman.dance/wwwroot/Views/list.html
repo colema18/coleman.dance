@@ -1,6 +1,6 @@
 ﻿<div>
 
-    <h1>List Movies</h1>
+    <h1>List Performances</h1>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -9,11 +9,11 @@
                 <th>Details</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody ng-cloak>
             <tr ng-repeat="performance in performances">
                 <td>
-                    <a href="/movies/edit/{{performance.Id}}" class="btn btn-default btn-xs">edit</a>
-                    <a href="/movies/delete/{{performance.Id}}" class="btn btn-danger btn-xs">delete</a>
+                    <a href="/movies/edit/{{performance.PerformanceId}}" class="btn btn-default btn-xs">edit</a>
+                    <a href="/movies/delete/{{performance.PerformanceId}}" class="btn btn-danger btn-xs">delete</a>
                 </td>
                 <td>{{performance.Title}}</td>
                 <td>{{performance.Details}}</td>

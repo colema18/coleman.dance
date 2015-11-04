@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="moviesApp">
+<html ng-app="app">
 <head>
     <base href="/">
     <meta charset="utf-8" />
@@ -19,9 +19,54 @@
     <script src="lib/angular-route/angular-route.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-cloak>
-    <div class="container-fluid">
-        <ng-view></ng-view>
+<body>
+    <div ng-controller="PerformancesListController">
+        <div ng-cloak class="container-fluid">
+            <div>
+                <h1>List Performances</h1>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="performance in performances">
+                            <td>{{performance.Title}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="MoviesListController">
+        <div ng-cloak class="container-fluid">
+            <div>
+                <h1>List Movies</h1>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Director</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="movie in movies">
+                            <td>
+                                <a href="/movies/edit/{{movie.Id}}" class="btn btn-default btn-xs">edit</a>
+                                <a href="/movies/delete/{{movie.Id}}" class="btn btn-danger btn-xs">delete</a>
+                            </td>
+                            <td>{{movie.Title}}</td>
+                            <td>{{movie.Director}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <a href="/movies/add" class="btn btn-primary">Add New Movie</a>
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

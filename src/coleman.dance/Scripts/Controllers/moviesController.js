@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('moviesApp')
+        .module('app')
         .controller('MoviesListController', MoviesListController)
         .controller('MoviesAddController', MoviesAddController)
         .controller('MoviesEditController', MoviesEditController)

@@ -3,8 +3,8 @@
 
     config.$inject = ['$routeProvider', '$locationProvider'];
 
-    angular.module('moviesApp', [
-        'ngRoute', 'moviesServices'
+    angular.module('app', [
+        'ngRoute', 'moviesServices', 'performancesServices',
     ]).config(config);
 
     //angular.module('performancesApp', [
@@ -13,14 +13,6 @@
 
     function config($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/', {
-                templateUrl: '/Views/movieslist.html',
-                controller: 'MoviesListController'
-            })
-            .when('/movies', {
-                templateUrl: '/Views/movieslist.html',
-                controller: 'MoviesListController'
-            })
             .when('/movies/add', {
                 templateUrl: '/Views/add.html',
                 controller: 'MoviesAddController'
